@@ -4,35 +4,75 @@
 // documentation: https://zed.dev/docs/configuring-zed
 //
 // To see all of Zed's default settings without changing your
-// custom settings, run zed: open default settings from the
+// custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3-8b",
+    },
+    "always_allow_tool_actions": false,
+    "model_parameters": [],
+  },
+  "agent_servers": {
+    "qwen": {
+      "command": "qwen",
+      "args": ["--experimental-acp"],
+      "env": {},
+      "type": "custom",
+    },
+  },
+  "features": {
+    "edit_prediction_provider": "zed",
+  },
+  "icon_theme": "Material Icon Theme",
   "base_keymap": "VSCode",
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 16,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "cursor_blink": false,
   "scroll_beyond_last_line": "off",
   "scrollbar": { "show": "never" },
   "vim": {
-    "use_multiline_find": true,
     "use_smartcase_find": true,
-    "toggle_relative_line_numbers": true
+    "toggle_relative_line_numbers": true,
+    "highlight_on_yank_duration": 1,
   },
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+  "theme": "Github Dark Dimmed",
+  "project_panel": {
+    "dock": "right",
   },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false,
+    "selections_menu": false,
+  },
+  "indent_guides": {
+    "active_line_width": 1,
+    "coloring": "indent_aware",
+    "background_coloring": "indent_aware",
+    "line_width": 1,
+  },
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true,
+    },
+  },
+  "wrap_guides": [90],
+  "show_wrap_guides": true,
+  "soft_wrap": "editor_width",
   "experimental.theme_overrides": {
-    "background.appearance": "blurred",
-    "background": "#09090b3B",
-    "editor.background": "#00000030",
-    "editor.gutter.background": "#00000030",
-    "tab_bar.background": "#00000030",
-    "terminal.background": "#00000030",
-    "toolbar.background": "#00000030",
+    "background.appearance": "transparent",
+    "background": "#09090bBB",
+    "editor.background": "#00000000",
+    "editor.gutter.background": "#00000020",
+    "tab_bar.background": "#00000000",
+    "terminal.background": "#00000000",
+    "toolbar.background": "#00000000",
     "tab.active_background": "#28282820",
     "tab.inactive_background": "#00000000",
     "status_bar.background": "#00000030",
@@ -40,6 +80,6 @@
     "panel.background": "#00000030",
     "border.variant": "#00000000",
     "scrollbar.track.border": "#00000000",
-    "editor.active_line.background": "#00000000"
-  }
+    "editor.active_line.background": "#00000000",
+  },
 }
